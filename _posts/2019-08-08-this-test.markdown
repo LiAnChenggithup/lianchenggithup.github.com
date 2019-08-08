@@ -7,7 +7,72 @@ description: 测试测试测试测试 # Add post description (optional)
 tag: [github, 测试, Mountains]
 ---
 
-Sriracha gochujang before they sold out, photo booth trust fund raw denim iceland. Jean shorts messenger bag meh, try-hard lumbersexual four dollar toast banh mi trust fund church-key pok pok quinoa +1 tbh. Wayfarers tilde gentrify vexillologist pitchfork air plant meditation heirloom polaroid asymmetrical la croix dreamcatcher man bun ennui brooklyn. Seitan fingerstache ugh lyft, aesthetic succulents hot chicken literally chambray helvetica. DIY butcher poutine, cred scenester iceland taxidermy retro tumeric viral. Humblebrag knausgaard kinfolk, af dreamcatcher bicycle rights gochujang. Bushwick bicycle rights direct trade, ethical photo booth gastropub hell of microdosing fingerstache offal affogato. Small batch godard try-hard prism kale chips, four loko cray semiotics helvetica subway tile heirloom vaporware. Venmo VHS keytar succulents chambray.
+**一、js数据类型**
+1、常规的划分(六种划分):数字、字符串、布尔值、对象、undefined、unll。
+2、八种划分(详细划分)：数字、字符串、布尔值、对象（狭义的对象、数组、函数）、undefined、unll。
+三种分类：基本数据类型：字符串、数字、布尔值
+				  复合数据类型：对象
+				  特殊数据类型：null、undefined
+**二、数据类型转换**
+1、显示类型转换（调用转换方法，主动去转换。）
+（1）Number（首字母一定得大写）
+
+var foo = 'lian';
+console.log(Number(foo));
+
+输出结果：Number会强制转换成数字类型，由于'lian'是非数字的字符串，强制转换成数字是NaN。
 
 
-> Brunch hella poutine authentic farm-to-table. Stumptown craft beer lomo, heirloom single-origin coffee synth PBR&B post-ironic. <cite>- Lorem Ipsum</cite>
+var foo = '123';
+console.log(Number(foo));
+
+输出结果：强制转换成数字123；
+(2)String (首字母同样大写)
+
+
+ var foo = 123;
+ console.log(String(foo));
+
+输出结果：String强制把其他数据类型转换成字符串类型，这里把数字123，转换成字符串的123。（在浏览器种数字类型的显示是蓝色的，字符串的数字是黑色的，读者从这里就能判断出数据类型）。
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190806074841995.png)
+（3）Boolean（首字母同样大写）
+
+var a = '';
+console.log( Boolean(a) );   
+
+只要字符串有内容就转成true，空字符串转成false，空格算内容。
+  
+
+var a = 0;
+console.log( Boolean(a) );   
+
+只要数字不为0，就转成true，0会转成false
+
+2、隐式类型转换（被动转换，由JS程序自动进行转换的）
+（1）  '+' '-'  '/' '*' 
+
+ 	var a = '1';
+    var b = 2;
+    console.log(a - b); //'1' -> 1 -> 1-2 = 1
+
+'+'号进行隐式类型转换时，会把数字类型转换成字符类型，然后把两边进行拼接。
+'-' '*' '/'进行转换时就是普通的隐式转换，把字符类型转成平时所理解的数字类型进行运算。
+
+（2）'=='
+
+console.log(2 == '2');
+
+输出结果：强制把字符串的2转成数字类型的2。
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190806080808392.png)
+
+（3）'+'  '-'这里的加和减和上面的加和减不是同一个含义，这里代表数值和负数值。
+
+	 var a = '2';
+   console.log(+a);
+
+输出结果：在字符串a前面加上数值‘+’，强制转换成蓝色的数字2。
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2019080608124599.png)
+
+**欢迎指正！！！会继续进行完善更新！！！**
+
+> Brunch hella poutine authentic farm-to-table. Stumptown craft beer lomo, heirloom single-origin coffee synth PBR&B post-ironic. <cite>- Javascript</cite>
